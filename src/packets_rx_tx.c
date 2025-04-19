@@ -103,9 +103,7 @@ void init_net_card_combbox(HWND hwnd_comb)
     for(d= alldevs; d != NULL; d= d->next)
     {
        info[0]=0;
-       sprintf(info, "%-15s %s"
-                ,"no ipv4 addr"
-                ,get_nic_FriendlyName(strchr(d->name, '{')));
+       sprintf(info, "%s", get_nic_FriendlyName(d->description));
                      
        for(a=d->addresses;a;a=a->next) 
        {

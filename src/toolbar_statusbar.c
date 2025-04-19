@@ -23,11 +23,6 @@ int statusbar_height;
 
 TBBUTTON at_button[] =                
     {
-        {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
-        {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
-        {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
-        {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
-        {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
         {0, IDT_TOOLBAR_STOP, TBSTATE_ENABLED, TBSTYLE_AUTOSIZE , {0}, 0, (INT_PTR)"stop TX"},
         {1, IDT_TOOLBAR_START, TBSTATE_ENABLED, TBSTYLE_AUTOSIZE , {0}, 0, (INT_PTR)"start TX"},
         {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
@@ -36,6 +31,11 @@ TBBUTTON at_button[] =
 
         {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
         {4, IDT_TOOLBAR_CAPTURE, TBSTATE_ENABLED, TBSTYLE_AUTOSIZE , {0}, 0, (INT_PTR)"separately capture packets" },
+		{I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
+        {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
+        {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
+        {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
+        {I_IMAGENONE , -1, TBSTATE_ENABLED, TBSTYLE_SEP|TBSTYLE_AUTOSIZE},
     };
 
 HBITMAP hbmpToolbar[3];
@@ -58,9 +58,9 @@ LRESULT CALLBACK my_tb_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPara
     button_height = rc.bottom-rc.top;
 #if 1
     MoveWindow	(hwnd_net_card_text
-        ,cxClient - cxChar_2*40, rc.top, cxChar_2*10, button_height, TRUE) ;
+        ,cxClient - cxChar_2*70, rc.top, cxChar_2*10, button_height, TRUE) ;
 
-    MoveWindow	(hwnd_net_card_comb, cxClient - cxChar_2*30, rc.top, cxChar_2*30, 250, TRUE) ;
+    MoveWindow	(hwnd_net_card_comb, cxClient - cxChar_2*60, rc.top, cxChar_2*60, 250, TRUE) ;
 #else
     rc.left += 8*button_width;
 

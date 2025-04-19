@@ -1118,7 +1118,7 @@ void * get_nic_FriendlyName(const char *name)
     dwRetVal = GetAdaptersAddresses(family, 0, NULL, pAddresses, &outBufLen);
 
 
-    if (NULL==name || name[0]!='{') goto EXIT;
+    if (NULL==name || name[0]!='{') return name;
     if (dwRetVal != NO_ERROR) goto EXIT;
 
     pCurrAddresses = pAddresses;
